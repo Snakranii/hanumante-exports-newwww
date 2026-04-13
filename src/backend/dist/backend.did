@@ -1,0 +1,26 @@
+type ContactSubmission = 
+ record {
+   companyName: text;
+   country: text;
+   email: text;
+   id: nat;
+   message: text;
+   name: text;
+   phone: text;
+   productInterest: text;
+   submittedAt: int;
+ };
+type ContactFormInput = 
+ record {
+   companyName: text;
+   country: text;
+   email: text;
+   message: text;
+   name: text;
+   phone: text;
+   productInterest: text;
+ };
+service : {
+  getContactSubmissions: () -> (vec ContactSubmission) query;
+  submitContactForm: (input: ContactFormInput) -> (ContactSubmission);
+}
